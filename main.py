@@ -11,24 +11,24 @@ from aiogram.types import Message
 from dotenv import load_dotenv
 load_dotenv()
 
-TOKEN = getenv("TOKEN")
-print(TOKEN)
-
-# dp = Dispatcher()
+# TOKEN = getenv("TOKEN")
 
 
-# @dp.message(CommandStart())
-# async def command_start_handler(message: Message) -> None:
-#     await message.answer("Привет")
+dp = Dispatcher()
+
+
+@dp.message(CommandStart())
+async def command_start_handler(message: Message) -> None:
+    await message.answer("Привет")
 
 
 
 
-# async def main() -> None:
-#     bot = Bot(token=TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
-#     await dp.start_polling(bot)
+async def main() -> None:
+    bot = Bot(token="6561069730:AAFSSK3HLXvhx9xq2GDvzlYPGA2qhd16zzQ", default=DefaultBotProperties(parse_mode=ParseMode.HTML))
+    await dp.start_polling(bot)
 
 
-# if __name__ == "__main__":
-#     logging.basicConfig(level=logging.INFO, stream=sys.stdout)
-#     asyncio.run(main())
+if __name__ == "__main__":
+    logging.basicConfig(level=logging.INFO, stream=sys.stdout)
+    asyncio.run(main())
