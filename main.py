@@ -11,7 +11,7 @@ from aiogram.types import Message
 from dotenv import load_dotenv
 load_dotenv()
 
-# TOKEN = getenv("TOKEN")
+TOKEN = getenv("TOKEN")
 
 
 dp = Dispatcher()
@@ -25,7 +25,7 @@ async def command_start_handler(message: Message) -> None:
 
 
 async def main() -> None:
-    bot = Bot(token="6561069730:AAFSSK3HLXvhx9xq2GDvzlYPGA2qhd16zzQ", default=DefaultBotProperties(parse_mode=ParseMode.HTML))
+    bot = Bot(token=TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
     await dp.start_polling(bot)
 
 
