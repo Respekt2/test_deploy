@@ -12,22 +12,23 @@ from dotenv import load_dotenv
 load_dotenv()
 
 TOKEN = getenv("TOKEN")
+print(TOKEN)
 
-dp = Dispatcher()
-
-
-@dp.message(CommandStart())
-async def command_start_handler(message: Message) -> None:
-    await message.answer("Привет")
+# dp = Dispatcher()
 
 
+# @dp.message(CommandStart())
+# async def command_start_handler(message: Message) -> None:
+#     await message.answer("Привет")
 
 
-async def main() -> None:
-    bot = Bot(token=TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
-    await dp.start_polling(bot)
 
 
-if __name__ == "__main__":
-    logging.basicConfig(level=logging.INFO, stream=sys.stdout)
-    asyncio.run(main())
+# async def main() -> None:
+#     bot = Bot(token=TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
+#     await dp.start_polling(bot)
+
+
+# if __name__ == "__main__":
+#     logging.basicConfig(level=logging.INFO, stream=sys.stdout)
+#     asyncio.run(main())
