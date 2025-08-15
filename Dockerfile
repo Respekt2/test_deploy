@@ -1,5 +1,6 @@
-FROM python:3.12-alpine
+# Используем официальный образ Python
+FROM python:3.12-slim
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 COPY . .
-CMD ["uvicorn", "main:app"]
+CMD ["python", "main.py"]
