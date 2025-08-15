@@ -80,4 +80,8 @@ def read_root():
 #     return {"devices": devices_data}
 
 if __name__ == "__main__":
-    uvicorn.run(app)
+    uvicorn.run(
+        app,
+        host="87.228.101.127",
+        port=8000,
+    )
